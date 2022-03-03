@@ -22,3 +22,20 @@ blocks:
           - bash setup.sh --clang
           - bash build-4.4.sh --clang --oldcam
           - bash build-4.4.sh --clang --newcam
+
+    - name: "Extended Kernel QTI"
+    run:
+        when: "branch = 'extended-eas-haptics'"
+    task:
+      secrets:
+      - name: Tokens
+      - name: Version
+      jobs:
+      - name: Building Kernels
+        commands:
+          - sudo apt install bc
+          - checkout
+          - git clone https://github.com/attack11/my_scripts.git && cd my_scripts
+          - bash setup.sh --clang
+          - bash build-4.4.sh --clang --oldcam
+
