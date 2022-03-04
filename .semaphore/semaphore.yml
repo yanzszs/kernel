@@ -22,8 +22,8 @@ blocks:
           - bash setup.sh --clang
           - bash build-4.4.sh --clang --oldcam
           - bash build-4.4.sh --clang --newcam
-
-    - name: "Extended Kernel QTI"
+         
+  - name: "Extended Kernel QTI"
     run:
         when: "branch = 'extended-eas-haptics'"
     task:
